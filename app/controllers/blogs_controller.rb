@@ -10,8 +10,12 @@ class BlogsController < ApplicationController
   end
 
   def create
-    Blog.create(text: blog_params[:text], user_id: current_user.id)
-    redirect_to root_path, notice: '投稿が完了しました'
+    @blog = Blog.new(text: blog_params[:text], user_id: current_user.id)
+    if @blog.save
+      redirect_to root_path, notice: '投稿が完了しました'
+    else
+      redirect_to new_blog_path, alert: "本文を入力してください"
+    end
   end
 
   def destroy

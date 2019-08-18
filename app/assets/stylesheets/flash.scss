@@ -2,18 +2,14 @@
   width: 100vw;
   position: absolute;
   z-index: 1;
+  color: $white;
+  text-align: center;
+  height: 64px;
+  line-height: 64px;
   .notice {
     background-color: $light_blue;
-    color: $white;
-    text-align: center;
-    height: 64px;
-    line-height: 64px;
   }
   .alert {
     background-color: $alert_orange;
-    color: $white;
-    text-align: center;
-    height: 64px;
-    line-height: 64px;
   }
 }
