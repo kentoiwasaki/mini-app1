@@ -1,32 +1,33 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title MiniApp1
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     / Compiled and minified CSS
-    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css", :rel => "stylesheet"}/
+    %link{href: "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css", rel: "stylesheet"}/
     / Compiled and minified JavaScript
-    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"}
-    %script{:crossorigin => "anonymous", :integrity => "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", :src => "https://code.jquery.com/jquery-3.4.1.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"}
+    %script{crossorigin: "anonymous", integrity: "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", src: "https://code.jquery.com/jquery-3.4.1.js"}
   %body
     = render 'layouts/notifications'
-    %nav.blue.lighten-2
-      .nav-wrapper
-        %a.brand-logo{:href => "/blogs"} Mini-App-Blog
+    %nav
+      %div.nav-wrapper
+        %a.brand-logo{href: "/blogs"} Mini-App-Blog
         - if user_signed_in?
           %ul#nav-mobile.right.hide-on-med-and-down
             %li
-              %a{"data-method" => "delete", :href => "/users/sign_out"} Sign Out
+              %a{"data-method": "delete", href: "/users/sign_out"} Sign Out
             %li
-              %a{:href => "/blogs/new"} New
+              %a{href: "/blogs/new"} New
         - else
           %ul#nav-mobile.right.hide-on-med-and-down
             %li
-              %a{:href => "/users/sign_in"} Log In
+              %a{href: "/users/sign_in"} Log In
             %li
-              %a{:href => "/users/sign_up"} Sign Up
+              %a{href: "/users/sign_up"} Sign Up
     = yield
+    
