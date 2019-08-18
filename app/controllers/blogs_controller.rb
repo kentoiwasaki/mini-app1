@@ -27,8 +27,8 @@ class BlogsController < ApplicationController
   def update
     blog = Blog.find(params[:id])
     blog.update(blog_params)if blog.user_id == current_user.id
+    redirect_to root_path, notice: '編集が完了しました'
   end
-
 
   private
   def blog_params
