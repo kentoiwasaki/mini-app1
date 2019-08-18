@@ -11,12 +11,13 @@ class BlogsController < ApplicationController
 
   def create
     Blog.create(text: blog_params[:text], user_id: current_user.id)
+    redirect_to root_path, notice: '投稿が完了しました'
   end
 
   def destroy
     blog = Blog.find(params[:id])
     blog.destroy if blog.user_id == current_user.id
-    redirect_to action: "index"
+    redirect_to root_path, notice: '削除が完了しました'
   end
 
   def edit

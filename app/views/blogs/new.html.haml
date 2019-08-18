@@ -1,5 +1,5 @@
 .contents
-  %h6 投稿する
+  %h6 本文
   = form_with url: blogs_path, local: true do |form|
     = form.text_field :text, class:'textarea'
     = form.submit "投稿"
