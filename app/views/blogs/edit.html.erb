@@ -1,9 +1,0 @@
-  <div class="contents row">
-      <%= form_with url: blog_path, method: :patch, local: true do |form| %>     
-      <h6>
-        編集する
-      </h6>
-      <%= form.text_field :text, value: @blog.text, class:'textarea' %>
-      <%= form.submit "編集" %>
-    <% end %>
-  </div>

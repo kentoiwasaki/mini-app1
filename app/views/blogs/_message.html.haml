@@ -1,0 +1,11 @@
+- blogs.each do |blog|
+  .row
+    .col.s12.m6
+      .card.white
+        .card-content.black-text
+          %p
+            = blog.text
+        - if user_signed_in? && current_user.id == blog.user_id
+          .card-action
+            = link_to 'Edit', "/blogs/#{blog.id}/edit", method: :get
+            = link_to 'Delete', "/blogs/#{blog.id}", method: :delete
