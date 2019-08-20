@@ -76,5 +76,4 @@ group :development do
 end
 
 gem 'kaminari'
-
 gem "jquery-rails"

@@ -1,9 +1,9 @@
 .notification {
   width: 100vw;
-  position: absolute;
-  z-index: 1;
   color: $white;
   text-align: center;
+  position: absolute;
+  z-index: 1;
   height: 64px;
   line-height: 64px;
   .notice {
