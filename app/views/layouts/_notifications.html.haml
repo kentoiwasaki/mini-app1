@@ -2,12 +2,12 @@
   - flash.each do |key, value|
     = content_tag :div, value, class: key
 
-:javascript
-  $(function(){
-    setTimeout("$('.notification').fadeOut('slow')", 1000) 
-  })
-
 -# :javascript
--#   $('.notification').click(function(){
--#     $('.notification').fadeOut('slow')
+-#   $(function(){
+-#     setTimeout("$('.notification').fadeOut('slow')", 1000) 
 -#   })
+
+:javascript
+  $('.notification').click(function(){
+    $('.notification').fadeOut('slow')
+  })
